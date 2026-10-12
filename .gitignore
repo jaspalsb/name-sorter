@@ -1,0 +1,19 @@
+#keep the local python environment and generated files out of git
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+#keep generated test results and coverage reports out of git
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+#the program creates this output file each time it runs
+sorted-names-list.txt
+
+#keep the separate package verification environment out of git
+.venv-wheel-check/
