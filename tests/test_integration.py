@@ -1,7 +1,6 @@
 import shutil
 import subprocess
-import sys
-from pathlib import Path
+import sysconfig
 from name_sorter.cli import main
 
 
@@ -52,14 +51,12 @@ def test_assessment_example_matches_expected_output(
 
 
 def test_installed_command_sorts_one_thousand_names(tmp_path):
-    #find the command beside the python interpreter running these tests
-    #this works even when the virtual environment has not been activated
+    #ask python where commands are installed because the layout varies by environment
+    scripts_directory = sysconfig.get_path("scripts")
+    command = shutil.which("name-sorter", path=scripts_directory)
 
-    command = shutil.which(
-        "name-sorter",
-        path=str(Path(sys.executable).parent),
-    )
     assert command is not None, (
+        f"name-sorter was not found in {scripts_directory}. "
         'Install the project first with: python -m pip install -e ".[dev]"'
     )
 
