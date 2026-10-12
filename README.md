@@ -1,3 +1,8 @@
+# Author: Jaspal Bainiwal
+## https://www.linkedin.com/in/jaspalbainiwal/
+
+## Dye & Durham coding assessment [October 12, 2026]
+
 # Name Sorter
 
 A Python command-line application that sorts names by last name, then by
